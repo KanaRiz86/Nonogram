@@ -1,0 +1,7 @@
+nonogram\v1\model\IMG.class
+nonogram\v1\controllers\IMGController.class
+nonogram\v1\main\Main.class
+nonogram\v1\model\Scores.class
+nonogram\v1\model\Users.class
+nonogram\v1\controllers\ScoresController.class
+nonogram\v1\controllers\UsersController.class

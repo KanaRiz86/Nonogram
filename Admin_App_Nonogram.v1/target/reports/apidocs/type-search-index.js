@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"java_yannlg.nonogram.v1","l":"NonogramV1"}];updateSearchResults();
