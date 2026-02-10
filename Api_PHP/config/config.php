@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$dbname = "nonogramme_db"; // <-- corrige ici
+$dbname = "nonogramme_db";
 $user = "root";
 $password = "";
 
