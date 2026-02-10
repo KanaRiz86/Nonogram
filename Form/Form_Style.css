@@ -1,0 +1,83 @@
+body {
+    text-align: center;
+}
+
+p, h1, h2, fieldset, .accept {
+    color: #9d9dcf;
+}
+
+h2 {
+    margin-top: 40px;
+}
+
+.obligation {
+    color: #a97a5a;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.email {
+    padding: 10px;
+}
+
+.informations {
+    padding-bottom: 10px;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-color: #9d9dcf;
+    border-radius: 6px;
+}
+
+.accept {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: fit-content;
+    margin: 0 auto; 
+}
+
+.submit_btn {
+    height: 60px;
+    margin-top: 30px;
+    background-color: #a97a5a;
+    color: #fff;
+}
+
+body, fieldset {
+    background-color: #202037;
+}
+
+.submit_btn, fieldset {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.errors, .success {
+    background-color: #9d9dcf ;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 323.2px;
+}
+
+.msgSuccess {
+    color: green;
+}
+
+.msgError {
+    color: red;
+}

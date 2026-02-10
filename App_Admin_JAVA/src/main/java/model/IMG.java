@@ -14,15 +14,17 @@ public class IMG {
     private int largeur;
     private int hauteur;
     private String difficulte;
-    private String grille;
+    private String grilleJson;
 
-    public IMG(int id, String nom, int largeur, int hauteur,
-                 String difficulte, String grille) {
+    public IMG(int id, String nom, int largeur, int hauteur, String difficulte, String grilleJson) {
         this.id = id;
         this.nom = nom;
         this.largeur = largeur;
         this.hauteur = hauteur;
         this.difficulte = difficulte;
-        this.grille = grille;
+        this.grilleJson = grilleJson;
+    }
+    public String getGrilleJson() {
+        return grilleJson;
     }
 }
