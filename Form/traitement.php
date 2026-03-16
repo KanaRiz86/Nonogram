@@ -53,7 +53,7 @@ if(isset($postData)){
             $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
             // Insertion dans la table users 
             // $req pour pour établir la requête sql
-            $req = $db->prepare('INSERT INTO users(email, nickname, password) VALUE(:email, :nickname, :password)');
+            $req = $db->prepare('INSERT INTO users(email, nickname, password) VALUES (:email, :nickname, :password)');
 
             $req->execute(([
                 ':email' => $email,
