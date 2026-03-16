@@ -1,15 +1,9 @@
-<?php
-// S'il existe une ou plusieurs erreurs, permet de les afficher
-if (!empty($_SESSION['errors'])) { ?>
+<?php if (!empty($_SESSION['errors'])): ?>
     <div class="errors">
-        <!-- Boucle pour afficher chaque erreur -->
-        <? foreach ($_SESSION['errors'] as $error) { ?>
-            <p class="msgError"><?= $error; ?></p>
-        <? } ?>
+        <?php foreach ($_SESSION['errors'] as $error): ?>
+            <p class="msgError"><?= htmlspecialchars($error) ?></p>
+        <?php endforeach; ?>
     </div>
-<? } ?>
+<?php endif; ?>
 
-<!-- Destruction de la variable errors -->
-<?
-unset($_SESSION['errors']);
-?>
+<?php unset($_SESSION['errors']); ?>

@@ -2,11 +2,11 @@
 
 $user = 'root';
 // Il se peut que d'un serveur à l'autre (MAMP/WAMP/LAMP) le $pwd soit comme ça : ''
-$pwd = 'root';
+$pwd = '';
 
 // Création de la variable concernant la BDD
 try{
-    $db = new PDO('mysql:host=localhost;dbname=nonogram;charset=utf8', $user, $pwd);
+    $db = new PDO('mysql:host=localhost;dbname=nonogramme_db;charset=utf8', $user, $pwd);
 }
 catch (PDOException $e)
 {
