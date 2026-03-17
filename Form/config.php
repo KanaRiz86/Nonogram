@@ -2,7 +2,7 @@
 
 $user = 'root';
 // Il se peut que d'un serveur à l'autre (MAMP/WAMP/LAMP) le $pwd soit comme ça : ''
-$pwd = '';
+$pwd = 'root';
 
 // Création de la variable concernant la BDD
 try{

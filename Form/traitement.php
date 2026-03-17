@@ -61,7 +61,7 @@ if(isset($postData)){
                 ':password' => $hashedPassword,
             ]));
 
-            $success[] = 'Félicitations ! 🎉<br> Vous venez de créer votre compte.';
+            $success[] = 'Félicitations, compte créé ! 🎉';
         }
 
     }

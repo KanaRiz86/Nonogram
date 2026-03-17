@@ -2,7 +2,7 @@
 $host = "localhost";
 $dbname = "nonogramme_db";
 $user = "root";
-$password = "";
+$password = "root";
 
 try {
     $pdo = new PDO(
