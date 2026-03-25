@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : mar. 10 fév. 2026 à 16:25
--- Version du serveur : 10.4.32-MariaDB
--- Version de PHP : 8.2.12
+-- Hôte : localhost:3306
+-- Généré le : mer. 25 mars 2026 à 13:25
+-- Version du serveur : 5.7.24
+-- Version de PHP : 8.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,8 +33,8 @@ CREATE TABLE `images` (
   `largeur` int(11) NOT NULL,
   `hauteur` int(11) NOT NULL,
   `grille` text NOT NULL,
-  `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `images`
@@ -55,9 +55,9 @@ CREATE TABLE `scores` (
   `id_user` int(11) NOT NULL,
   `id_image` int(11) NOT NULL,
   `temps` int(11) NOT NULL,
-  `erreurs` int(11) DEFAULT 0,
-  `date_score` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `erreurs` int(11) DEFAULT '0',
+  `date_score` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `scores`
@@ -76,20 +76,23 @@ INSERT INTO `scores` (`id_score`, `id_user`, `id_image`, `temps`, `erreurs`, `da
 
 CREATE TABLE `users` (
   `id_user` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
+  `nickname` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password_hash` varchar(255) NOT NULL,
-  `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `password` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id_user`, `username`, `email`, `password_hash`, `created_at`) VALUES
+INSERT INTO `users` (`id_user`, `nickname`, `email`, `password`, `created_at`) VALUES
 (1, 'Yann', 'yann@example.com', 'dummyhash1', '2026-02-09 13:15:47'),
 (2, 'Alice', 'alice@example.com', 'dummyhash2', '2026-02-09 13:15:47'),
-(3, 'Bob', 'bob@example.com', 'dummyhash3', '2026-02-09 13:15:47');
+(3, 'Bob', 'bob@example.com', 'dummyhash3', '2026-02-09 13:15:47'),
+(4, 'Toto', 'totolavedette@gmail.com', '$2y$10$6QuJABQ2B2OhVPZP6PgDtOOMQaGVtzcXD3WkmvzWI5dCO5f68BN4q', '2026-03-17 14:07:16'),
+(7, 'Totoooo', 'totolavedetteeee@gmail.com', '$2y$10$l4VnvFompaKBlkFY4okl8OZpSu7nWR7sVIgB1CzaNW/slgpU1a0b6', '2026-03-17 14:09:47'),
+(8, 'Totooooo', 'totolavedetteeeee@gmail.com', '$2y$10$CJ4X9GgBg7BM9lZcJ5AsGOdhOKvDnsFm3y56uiu/9RZ0daWnfdO4u', '2026-03-17 14:13:23');
 
 --
 -- Index pour les tables déchargées
@@ -114,7 +117,7 @@ ALTER TABLE `scores`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_user`),
-  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `username` (`nickname`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
@@ -137,7 +140,7 @@ ALTER TABLE `scores`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Contraintes pour les tables déchargées
