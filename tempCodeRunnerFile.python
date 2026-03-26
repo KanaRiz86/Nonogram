@@ -1,7 +1,0 @@
-phrase=str(input("Veuillez saisir une phrase sans ponctuation, commençant et se terminant par une lettre :"))
-compteur=1
-for i in range (0,len(phrase)-1):
-    if (phrase[i])==" ":
-        compteur=compteur+1
-        
-print(compteur)
