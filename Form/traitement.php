@@ -47,6 +47,31 @@ if(isset($postData)){
             $errors[] = "Vous devez accepter que vos informations soient stockées.";
         }
 
+        // Vérifier si email / pseudo existent déjà
+        $req = $db->prepare('SELECT email, nickname FROM users WHERE email = :email OR nickname = :nickname');
+        $req->execute([
+            ':email' => $email,
+            ':nickname' => $nickname
+        ]);
+
+        $user = $req->fetch(PDO::FETCH_ASSOC);
+
+        if($user){
+            // Vérification couple email/pseudo
+            if($user['email'] === $email && $user['nickname'] === $nickname){
+                $errors[] = "⚠️Un compte avec cet email et ce pseudo existe déjà, veuillez vous connecter.⚠️";
+
+            }
+            // Vérification email
+            elseif($user['email'] === $email){
+                $errors[] = "Cet email est déjà utilisé, veuillez en utiliser un nouveau !👻";
+            }
+            // Vérification pseudo
+            elseif($user['nickname'] === $nickname){
+                $errors[] = "Ce pseudo est déjà utilisé, merci d'en choisir un autre !💩";
+            }
+        }
+
         // Si, il n'y a pas d'erreurs, ajout à la BDD
         if(count($errors) == 0){
             // Hash du mot de passe avec Bcrypt
