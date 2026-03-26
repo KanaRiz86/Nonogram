@@ -54,6 +54,7 @@ if(isset($postData)){
             ':nickname' => $nickname
         ]);
 
+        // Variable qui contient les données de la requête sous forme de tableau associatif.
         $user = $req->fetch(PDO::FETCH_ASSOC);
 
         if($user){
