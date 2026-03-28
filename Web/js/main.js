@@ -208,9 +208,9 @@ function demarrerJeu(lignes, colonnes) {
     clearInterval(intervalID);
 
     const temps = Math.floor(chrono.obtenirTempsEcoule()/1000); // Diviser par 1000 pour avoir des secondes (pas des ms)
-    const erreurs = 0; //////////////////////////////////// changer les valeurs de ces constantes pour que ça s'adapte à l'utilisateur connecté
-    const id_user = 2; ///////////////////////////////////// idem
-    const id_image = 1; /////////////////////////////////// est-ce qu'on garde ça ?
+    const erreurs = 0;
+    const id_user = 2;
+    const id_image = 1;
     const tailleGrille = lignes; // Permet de savoir la taille de la grille
 
     const scoreFinal = Math.floor(calculScore(temps, tailleGrille, erreurs));
