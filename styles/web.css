@@ -18,14 +18,56 @@ h1 {
 
 /* ===================== Containers grill et indices ===================== */
 
+/* Conteneur principal  (grille + tableau) */
+#gameTableau {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1000px; /* Largeur maximale pour éviter l'étirement */
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+/* Grille du jeu */
 #game-container {
-  display: grid;
-  gap: 2px;
-  margin: 20px 0px;
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  padding: 30px;
-  justify-content: center;
+    display: grid;
+    gap: 2px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 30px;
+    box-sizing: border-box;
+    grid-template-columns: repeat(7, 30px);
+    grid-template-rows: repeat(7, 30px);
+}
+
+/* Tableau des scores */
+#tableau_score {
+    border-collapse: collapse;
+    min-width: 200px;
+    margin: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+/* Style des cellules du tableau */
+#tableau_score th, #tableau_score td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+/* En-têtes du tableau */
+#tableau_score th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Cellules du tableau */
+#tableau_score td {
+    min-width: 60px; /* Largeur minimale pour chaque colonne */
 }
 
 /* Toutes les cases */
@@ -35,7 +77,6 @@ h1 {
   align-items: center;
   width: 30px;
   height: 30px;
-  
   box-sizing: border-box;
 }
 
@@ -62,7 +103,7 @@ h1 {
 #game-container .joueur.inconnue::before,
 #game-container .joueur.inconnue::after {
   content: ""; /* nécéssaire pour afficher un pseudo-élément*/
-  position: absolute; /*Permet de placer chaque barre précisément, notamment par rapport à la case (position: relative du parent)*/
+  position: absolute; /* Permet de placer chaque barre précisément, notamment par rapport à la case (position: relative du parent) */
   width: 80%;
   height: 2px;
   background-color: red;
@@ -101,5 +142,4 @@ h1 {
   margin-top: 20px;
   margin-bottom: 20px;
   justify-content: center;
-
 }

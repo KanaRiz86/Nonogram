@@ -35,11 +35,11 @@ export class Controleur {
     const etatSuivant = (etatActuel + 1) % 3;
     this.puzzle.grille.setCellule(ligne, colonne, etatSuivant);
     
-    console.log(this.puzzle.grille.cellules);
+    //console.log(this.puzzle.grille.cellules);
 
     this.vue.rendu();
 
-    // Vérifie si le puzzle est résolu
+    // Vérifie si le nonogram est résolu
 if (this.puzzle.estResolu() && this.finDePartieCallback) {
   this.finDePartieCallback();
 }

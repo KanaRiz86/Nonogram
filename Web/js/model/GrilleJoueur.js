@@ -1,6 +1,4 @@
-
 // Création de la grille du joueur
-
 import { ValeurCell } from "./ValeurCell.js";
 
 //Création de la class "Grille Joueur"
@@ -26,9 +24,8 @@ export class GrilleJoueur {
     return this.cellules[ligne]?.[colonne];
   }
 
-
-//Méthode qui permet de modifier la valeur d'une cellule
-setCellule(ligne, colonne, valeur) {
-  this.cellules[ligne][colonne] = valeur;
-}
+  //Méthode qui permet de modifier la valeur d'une cellule
+  setCellule(ligne, colonne, valeur) {
+    this.cellules[ligne][colonne] = valeur;
+  }
 }

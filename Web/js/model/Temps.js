@@ -1,5 +1,4 @@
 // Initialise un chronomètre pour une partie
-
 export class Temps {
   
   constructor(puzzle) {

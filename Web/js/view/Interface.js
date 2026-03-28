@@ -57,7 +57,7 @@ export class Interface {
     this.totalLignes = this.maxColonneIndices + this.puzzle.grille.lignes;
     this.totalColonnes = this.maxLigneIndices + this.puzzle.grille.colonnes;
 
-    console.log("totalLignes", this.totalLignes, "totalColonnes", this.totalColonnes);
+    //console.log("totalLignes", this.totalLignes, "totalColonnes", this.totalColonnes);
 
     // Définition de la grille CSS
     const tailleCellule = 30;
@@ -200,5 +200,4 @@ export class Interface {
     this.chronometreContainer.textContent =
       minutes + ":" + (secondes < 10 ? "0" : "") + secondes;
   }
-
 }
