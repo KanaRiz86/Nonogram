@@ -35,7 +35,7 @@ export class Puzzle {
 
 //=====================================Calcul des indices==============================================
 
-  //Une méthode statique est une fonction attachée à la classe elle-même, et non pas à une instance de la classe.
+//Une méthode statique est une fonction attachée à la classe elle-même, et non pas à une instance de la classe.
   static calculIndices(serie){
     let indices=[], // Tableau qui va contenir la taille de chaque blocs de cellules remplies
     tailleBloc=0; //compteur pour suivre combien de cellules consécutives on étés remplies
@@ -52,7 +52,7 @@ export class Puzzle {
     return indices.length ? indices : [0]; // Si au moins un bloc a été trouvé, on renvoie indices. Sinon, si la ligne est totalement vide, on renvoie [0]
   }
 
-  // Méthode qui retourne un tableau avec les indices pour chaque ligne.
+// Méthode qui retourne un tableau avec les indices pour chaque ligne.
   getLigneIndices() {
   let indicesParLigne = [];
   for (let ligneActuelle of this.solution) { //pour chaque élément du tableau, appelle-le x dans ce bloc
@@ -62,7 +62,7 @@ export class Puzzle {
   return indicesParLigne;
 }
 
-  //Méthode qui renvoie un tableau de tableaux, où chaque sous-tableau contient les indices pour une colonne
+//Méthode qui renvoie un tableau de tableaux, où chaque sous-tableau contient les indices pour une colonne
   getColonneIndices(){
     let indicesParColonnes=[];
     for(let indexColonne=0;indexColonne<this.grille.colonnes;indexColonne++){ //index de la colonne actuelle (0, 1, 2, …)
