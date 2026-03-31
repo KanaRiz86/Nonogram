@@ -1,6 +1,6 @@
 <?php
 // On va récupérer la BDD
-require_once("../Form/config.php");
+require_once("../form/config.php");
 
 // Récupère les 5 meilleurs scores avec le nom du joueur
 $sql = "

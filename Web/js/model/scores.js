@@ -1,7 +1,7 @@
 // ====================== Fonction permettant de calculer le score // ================================
 
 
-function calculScore(temps, tailleGrille, erreurs) {
+export function calculScore(temps, tailleGrille, erreurs) {
     // création de la variable pour accorder des points fixes de victoire selon la taille de la grille
     let pointsFixes;
     // création de la variable pour accorder un coefficient selon la taille de la grille

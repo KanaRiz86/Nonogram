@@ -1,5 +1,5 @@
 // Formate la première colonne du tableau "Rang"
-  function formaterRang(rang) {
+ export function formaterRang(rang) {
       switch (rang) {
           case 1: return "1er";
           case 2: return "2eme";

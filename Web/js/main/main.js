@@ -4,6 +4,8 @@ import { Puzzle } from "../model/Puzzle.js"; //Import du puzzle(solution + indic
 import { Interface } from "../view/Interface.js"; //Import de la vue
 import { Controleur } from "../controller/Controleur.js"; //Import du contrôleur
 import { Temps } from "../model/Temps.js";
+import { calculScore } from "../model/scores.js";
+import { chargerTopScores, envoyerScore } from "../controller/ControlScores.js";
 
 
 // ===================== Génération aléatoire de la solution // =====================
@@ -75,7 +77,11 @@ function demarrerJeu(lignes, colonnes) {
 
     const temps = Math.floor(chrono.obtenirTempsEcoule()/1000); // Diviser par 1000 pour avoir des secondes (pas des ms)
     const erreurs = 0;
-    const id_user = 2;
+    //const id_user = 2;
+
+    const ID_USER_TEST = 1;       //
+    const id_user = ID_USER_TEST; // 2 lignes temporaires en attendant l'intégration du système de connexion de Fabien
+
     const id_image = 1;
     const tailleGrille = lignes; // Permet de savoir la taille de la grille
 
@@ -84,10 +90,11 @@ function demarrerJeu(lignes, colonnes) {
     // Appelle de la fonction pour envoyer les données du score au serveur PHP via Fetch
     envoyerScore(id_user, id_image, temps, erreurs, tailleGrille);
     
-    alert(`Félicitations ! Vous avez obtenu un score de : ${scoreFinal}`);
-    
+    setTimeout(() => {
+      alert(`Félicitations ! Vous avez obtenu un score de : ${scoreFinal}`);
+    }, 50);
     // Exécute la fonction chargerTopScores après 500 ms
-    // Permet d'éviter des conflits avec ScoreSauvegarder.php le fichier met du temps à répondre
+    // Permet d'éviter des conflits avec score-sauvegarder.php le fichier met du temps à répondre
     setTimeout(chargerTopScores, 500);
   });
 }

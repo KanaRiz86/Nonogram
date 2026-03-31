@@ -1,4 +1,4 @@
-import { formaterRang } from "../view/tableauScores.js";
+import { formaterRang } from "../view/TableauScores.js";
 import { calculScore } from "../model/scores.js";
 // ============================ Envoie le score en JSON à PHP // ===========================================
 
@@ -15,7 +15,7 @@ export function envoyerScore(id_user, id_image, temps, erreurs, tailleGrille) {
   };
   // Utilisation de l'API Fetch pour envoyer les données au serveur PHP via une requête HTTP POST
   // L'URL est le chemin vers le script PHP qui va traiter et sauvegarder le score dans la BDD
-  fetch('../Web/traitement/scores/ScoreSauvegarder.php', {
+  fetch('../Web/traitement/scores/score-sauvegarder.php', {
     method: 'POST', // Type de requête
     headers: {
       'Content-Type': 'application/json' // Type de contenu : JSON
@@ -42,7 +42,7 @@ export function envoyerScore(id_user, id_image, temps, erreurs, tailleGrille) {
 export function chargerTopScores() {
   // Utilisation de l'API Fetch pour envoyer les données au serveur PHP via une requête HTTP POST
   // L'URL est le chemin vers le script PHP qui va traiter et charger le score dans la BDD
-  fetch('../Web/traitement/scores/PostScores.php', {
+  fetch('../Web/traitement/scores/post-scores.php', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json', // Aucun corps de requête envoyé mais s'il y en avait un il serait au format JSON
