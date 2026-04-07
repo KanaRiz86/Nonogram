@@ -6,6 +6,7 @@ import { Controleur } from "../controller/Controleur.js"; //Import du contrôleu
 import { Temps } from "../model/Temps.js";
 import { calculScore } from "../model/scores.js";
 import { chargerTopScores, envoyerScore } from "../controller/ControlScores.js";
+import { initAddEventListenerPopup } from "../controller/ControlPopup.js"
 
 
 // ===================== Génération aléatoire de la solution // =====================
@@ -77,10 +78,10 @@ function demarrerJeu(lignes, colonnes) {
 
     const temps = Math.floor(chrono.obtenirTempsEcoule()/1000); // Diviser par 1000 pour avoir des secondes (pas des ms)
     const erreurs = 0;
-    //const id_user = 2;
+    const id_user = 0;//mode invité
 
-    const ID_USER_TEST = 1;       //
-    const id_user = ID_USER_TEST; // 2 lignes temporaires en attendant l'intégration du système de connexion de Fabien
+  
+
 
     const id_image = 1;
     const tailleGrille = lignes; // Permet de savoir la taille de la grille
@@ -116,3 +117,6 @@ boutons.forEach(bouton => {
     demarrerJeu(taille, taille);
   });
 });
+
+
+

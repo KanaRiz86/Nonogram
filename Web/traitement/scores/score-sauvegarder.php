@@ -1,4 +1,5 @@
 <?php
+session_start(); //NEW
 require_once("../form/config.php");
 
 // Lire les données JSON envoyées par JS
@@ -10,7 +11,8 @@ if (!$data) {
     exit;
 }
 
-$id_user = $data['id_user'] ?? null;
+//$id_user = $data['id_user'] ?? null; ANCIENNE METHODE
+$id_user = $_SESSION['LOGGED_USER']['id_user']; //NEW
 $id_image = $data['id_image'] ?? null;
 $temps = $data['temps'] ?? null;
 $erreurs = $data['erreurs'] ?? null;
