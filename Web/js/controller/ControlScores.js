@@ -1,10 +1,26 @@
 import { formaterRang } from "../view/TableauScores.js";
 import { calculScore } from "../model/scores.js";
+import GifScoreView from "../view/GifScore.js";
+import { getRandomGifByScore } from "../model/CatalogGif.js";
 // ============================ Envoie le score en JSON à PHP // ===========================================
 
 export function envoyerScore(id_user, id_image, temps, erreurs, tailleGrille) {
   // Création de la variable qui prends le score calculer dans la fonction calculScore
-  const scoreFinal = Math.floor(calculScore(temps, tailleGrille, erreurs));
+  //const scoreFinal = Math.floor(calculScore(temps, tailleGrille, erreurs));
+  const scoreFinal = 0;
+  console.log("Score test :", scoreFinal);
+  // ==================== GIF lié au score ====================
+  const gifContainer = document.getElementById("gif-score-container");
+  const gifImage = document.getElementById("gif-score-image");
+  const gifText = document.getElementById("gif-score-text");
+
+  if (gifContainer && gifImage && gifText) {
+    const gifScoreView = new GifScoreView(gifContainer, gifImage, gifText);
+    const gifData = getRandomGifByScore(scoreFinal);
+    gifScoreView.showGif(gifData);
+  }
+  // =========================================================
+
   // Création de la variable qui va enregistrer les données pour les envoyer au script PHP
   const data = {
     id_user,
