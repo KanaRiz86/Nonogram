@@ -1,0 +1,19 @@
+#gif-score-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#gif-score-image {
+    max-width: 300px;
+    border-radius: 10px;
+    z-index: 99999;
+}
+
+#gif-score-text {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
