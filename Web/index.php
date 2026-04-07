@@ -114,6 +114,17 @@ session_start();
           <?php unset($_SESSION['LOGIN_ERROR_MESSAGE']); ?>
       <?php endif; ?>
     </script>
+
+    <!-- Popup Changer mot de passe -->
+<div class="popup" id="popupChangePassword">
+  <div>Nouveau mot de passe</div>
+  <form id="formChangePassword" method="POST" action="traitement/connexion/change_password.php">
+    <input type="email" name="email" placeholder="Votre email" required>
+    <input type="password" name="new_password" placeholder="Nouveau mot de passe" required>
+    <input type="password" name="confirm_password" placeholder="Confirmez le nouveau mot de passe" required>
+    <button type="submit">Changer le mot de passe</button>
+  </form>
+</div>
   <!------------------------------------- Popup d'Aide -------------------------------------------->
     <div class="popup" id="popupAide">
       <div>Nous contacter</div>

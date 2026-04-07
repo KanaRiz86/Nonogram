@@ -46,12 +46,9 @@
   margin-top: 80px; /* décalage depuis le haut du parent */
 }
 
-/* ============ Popup d'aide ============ */
 
 
-
-
-/* ============ Contenu de la popup ============ */
+/* ============ Contenu de la popup de Connexion ============ */
 .popup {
   display: none;
   position: absolute;
@@ -61,7 +58,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  width: 350px;
   padding: 15px;
   text-align: center;
   color: white;
@@ -147,6 +144,95 @@
   margin-bottom: 5px;
 }
 
+/* ========================================= Popup d'aide ============================================== */
+
+#popupAide {
+  position: absolute;
+  top: 40%;              /* ajuste la hauteur verticale */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;           /* largeur élargie */
+  max-width: 90%;         /* responsive sur mobile */
+  padding: 25px;          /* espace intérieur plus grand */
+  background-color: #222; 
+  color: white;
+  font-size: 16px;        /* taille du texte agrandie */
+  border-radius: 5px;
+  text-align: left;       /* texte à gauche pour les inputs et textarea */
+  z-index: 1001;
+}
+
+#popupAide div:first-child {
+  font-size: 22px;       /* titre agrandi */
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#popupAide form input,
+#popupAide form textarea {
+  width: 95%;            /* champs plus larges */
+  padding: 10px;         /* espace intérieur plus grand */
+  font-size: 16px;       /* texte des champs agrandi */
+  margin-bottom: 15px;
+}
+
+#popupAide textarea {
+  width: 95%;           /* largeur du champ */
+  height: 150px;        /* hauteur du champ */
+  padding: 10px;        /* espace intérieur */
+  font-size: 16px;      /* taille du texte */
+  margin-bottom: 15px;
+  resize: vertical;     /* l'utilisateur peut redimensionner verticalement */
+}
+
+#btnValiderMessage {
+  background-color: #b69967;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;       /* bouton plus grand */
+  cursor: pointer;
+  display: block;
+  margin: 10px auto 0 auto; /* centré horizontalement avec marge en haut */
+}
+
+/* ========================================= Popup changement de mot de passe ============================================== */
+
+#popupChangePassword {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  max-width: 90%;
+  padding: 20px;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+#popupChangePassword input {
+  width: 90%;
+  margin-bottom: 15px;
+  padding: 7px;
+  font-size: 14px;
+}
+
+#popupChangePassword button {
+  background-color: #b69967;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
 /* Affichage de la popup quand active */
 .popupBackground.active {
   display: flex;
@@ -156,6 +242,9 @@
   display: block;
   z-index: 1001;      /* au-dessus du fond */
 }
+
+
+
 
 /* ===================== Popup Règles ===================== */
 #popupRegles {
