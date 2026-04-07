@@ -62,6 +62,7 @@ session_start();
           <button id="btnMdpPerdu" type="button">Nouveau mot de passe</button>
         </div>
       </form>
+
     </div>
 
  <!-- Script pour ouvrir popup et gérer infobulles côté serveur -->
@@ -123,7 +124,6 @@ session_start();
       </form>
     </div>
   </div>
-
   <!------------------------------------- Popup Règles -------------------------------------------->
 
   <div class="popup" id="popupRegles">
@@ -139,7 +139,7 @@ session_start();
       <li>Le chronomètre calcule le temps de jeu et le score final.</li>
       <li>Vous pouvez recommencer une partie avec les boutons "Nouvelle Partie" "5x5", "10x10", ou "15x15".</li>
     </ul>
-    <button onclick="cacherPopup()">Fermer</button>
+    <button id="btnFermerRegles">Fermer</button>
   </div>
 </div>
 
@@ -151,8 +151,6 @@ session_start();
 
   <script type="module" src="js/controller/ControlPopup.js"></script>
   <script type="module" src="js/main/main.js"></script>
-
-
 
   
 </body>
