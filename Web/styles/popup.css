@@ -40,6 +40,17 @@
   z-index: 1000; /* au-dessus de tout */
 }
 
+/* ============ Popup de connexion ============ */
+
+#popupConnexion {
+  margin-top: 80px; /* décalage depuis le haut du parent */
+}
+
+/* ============ Popup d'aide ============ */
+
+
+
+
 /* ============ Contenu de la popup ============ */
 .popup {
   display: none;
@@ -57,7 +68,6 @@
   font-size: 17px;
   font-weight: 500;
   background-color: #222;
-  ;
   border-radius: 5px;
   z-index: 1000;
 }
@@ -114,15 +124,7 @@
     color: #b69967;      
 }
 
-/* ============ Affichage de la popup ============ */
 
-.popupBackground.active {
-  display: flex;
-}
-
-.popup.active {
-  display: block;
-}
 /* ===================== Tous les divs à l'intérieur de la popup ===================== */
 
 .popup div {
@@ -145,22 +147,39 @@
   margin-bottom: 5px;
 }
 
+/* Affichage de la popup quand active */
+.popupBackground.active {
+  display: flex;
+}
+
+.popup.active {
+  display: block;
+  z-index: 1001;      /* au-dessus du fond */
+}
+
 /* ===================== Popup Règles ===================== */
 #popupRegles {
   display: none;
   position: absolute;
-  top: 30%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
+  width: 500px;
   max-width: 90%;
   padding: 20px;
   text-align: center;
   background-color: #222;
   color: white;
-  font-size: 16px;
   border-radius: 5px;
-  z-index: 1000;
+ 
+}
+
+#popupRegles > div:first-child {
+  font-size: 22px;      /* agrandir le texte */
+  font-weight: bold;     /* mettre en gras */
+  margin-bottom: 15px;   /* espace après le titre */
+  text-align: center;    /* centre le titre */
+  color: #fff;           /* couleur blanche */
 }
 
 #popupRegles div {
@@ -175,6 +194,7 @@
 }
 
 #popupRegles button {
+  margin-top: 20px;
   background-color: #b69967;
   color: white;
   padding: 10px 20px;
@@ -182,7 +202,20 @@
   border-radius: 3px;
   font-size: 14px;
   cursor: pointer;
+
 }
+
+#popupRegles p,
+#popupRegles ul,
+#popupRegles li {
+  text-align: left; /* texte à gauche, collé aux bullets */
+}
+
+#popupRegles li {
+  margin-bottom: 12px; /* espace entre chaque bullet */
+  line-height: 1.5;    /* hauteur de ligne pour lisibilité */
+}
+
 
 /* Affichage de la popup quand active */
 .popupBackground.active {
