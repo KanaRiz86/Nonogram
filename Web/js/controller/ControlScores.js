@@ -21,6 +21,7 @@ export function envoyerScore(id_user, id_image, temps, erreurs, tailleGrille) {
   }
   // =========================================================
 
+  const scoreFinal = Math.floor(calculScore(temps, tailleGrille, erreurs));
   // Création de la variable qui va enregistrer les données pour les envoyer au script PHP
   const data = {
     id_user,

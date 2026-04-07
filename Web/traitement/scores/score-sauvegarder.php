@@ -1,5 +1,5 @@
 <?php
-require_once("../Form/config.php");
+require_once("../form/config.php");
 
 // Lire les données JSON envoyées par JS
 $data = json_decode(file_get_contents("php://input"), true);

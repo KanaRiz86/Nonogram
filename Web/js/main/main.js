@@ -109,6 +109,8 @@ document.getElementById("nouvelle-partie").addEventListener("click", function ()
   demarrerJeu(5, 5);
 });
 
+// ===================== Boutons // =====================
+
 const boutons = document.querySelectorAll("#controls-container button[data-size]");
 boutons.forEach(bouton => {
   bouton.addEventListener("click", () => {
