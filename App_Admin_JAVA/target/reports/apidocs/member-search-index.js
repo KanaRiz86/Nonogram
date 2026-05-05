@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"java_yannlg.nonogram.v1","c":"NonogramV1","l":"main(String[])","u":"main(java.lang.String[])"},{"p":"java_yannlg.nonogram.v1","c":"NonogramV1","l":"NonogramV1()","u":"%3Cinit%3E()"}];updateSearchResults();

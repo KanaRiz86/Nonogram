@@ -1,16 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package main;
 
-/**
- *
- * @author syste
- */
+
+import bdd.Connecter;
+import java.sql.Connection;
+
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        // Test de la connexion
+        Connection con = Connecter.connecter();
+
+        if (con != null){
+            System.out.println("Connexion OK !");
+        } else {
+            System.out.println("Échec de la connexion.");
+        }
     }
 }
