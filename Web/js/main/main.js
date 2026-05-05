@@ -81,8 +81,6 @@ function demarrerJeu(lignes, colonnes) {
     const id_user = 0;//mode invité
 
   
-
-
     const id_image = 1;
     const tailleGrille = lignes; // Permet de savoir la taille de la grille
 
