@@ -79,7 +79,6 @@ function demarrerJeu(lignes, colonnes) {
     const temps = Math.floor(chrono.obtenirTempsEcoule()/1000); // Diviser par 1000 pour avoir des secondes (pas des ms)
     const erreurs = 0;
     const id_user = 0;//mode invité
-
     const id_image = 1;
     const tailleGrille = lignes; // Permet de savoir la taille de la grille
 

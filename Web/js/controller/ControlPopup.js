@@ -5,6 +5,7 @@ export function initAddEventListenerPopup() {
     const popupBackground = document.querySelector(".popupBackground");
     const btnRegles = document.getElementById("Règles");
     const btnFermerRegles = document.getElementById("btnFermerRegles");
+    const btnMdpPerdu = document.getElementById("btnMdpPerdu");
 
     // Vérification DOM
     if (!btnConnexion || !btnAide || !popupBackground || !btnRegles || !btnFermerRegles) {
@@ -35,6 +36,10 @@ export function initAddEventListenerPopup() {
     // Bouton Fermer Règles
     btnFermerRegles.addEventListener("click", () => {
         cacherPopup();
+    });
+
+    btnMdpPerdu.addEventListener("click", () => {
+    afficherPopup("popupChangePassword");
     });
 
     // Clic sur le fond pour fermer toutes les popups

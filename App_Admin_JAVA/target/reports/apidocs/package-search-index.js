@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"java_yannlg.nonogram.v1"}];updateSearchResults();
