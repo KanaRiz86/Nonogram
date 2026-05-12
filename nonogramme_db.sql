@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : sam. 28 mars 2026 à 13:34
+-- Généré le : mar. 05 mai 2026 à 12:08
 -- Version du serveur : 5.7.24
 -- Version de PHP : 8.3.1
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `nonogramme_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_admin` int(11) NOT NULL,
+  `nom_admin` varchar(40) NOT NULL,
+  `prenom_admin` varchar(40) NOT NULL,
+  `email_admin` varchar(100) NOT NULL,
+  `mdp_admin` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `nom_admin`, `prenom_admin`, `email_admin`, `mdp_admin`) VALUES
+(1, 'Martin', 'Guillaume', 'admin@exemple.com', 'password');
 
 -- --------------------------------------------------------
 
@@ -97,7 +118,14 @@ INSERT INTO `scores` (`id_score`, `id_user`, `id_image`, `temps`, `erreurs`, `da
 (36, 2, 1, 15, 0, '2026-03-28 00:59:42', 1285),
 (37, 2, 1, 951, 0, '2026-03-28 01:15:50', 1496),
 (38, 2, 1, 224, 0, '2026-03-28 14:15:48', 1076),
-(39, 2, 1, 16, 0, '2026-03-28 14:16:58', 1284);
+(39, 2, 1, 16, 0, '2026-03-28 14:16:58', 1284),
+(40, 1, 1, 34, 0, '2026-04-06 10:15:14', 1266),
+(41, 3, 1, 25, 0, '2026-04-07 10:00:49', 1275),
+(42, 3, 1, 32, 0, '2026-04-07 10:33:57', 1268),
+(43, 3, 1, 119, 0, '2026-04-07 10:38:14', 2462),
+(44, 3, 1, 17, 0, '2026-04-07 11:48:07', 1283),
+(45, 3, 1, 12, 0, '2026-04-07 12:03:10', 1288),
+(46, 3, 1, 17, 0, '2026-04-07 13:27:03', 1283);
 
 -- --------------------------------------------------------
 
@@ -118,17 +146,22 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `nickname`, `email`, `password`, `created_at`) VALUES
-(1, 'Yann', 'yann@example.com', 'dummyhash1', '2026-02-09 13:15:47'),
+(1, 'Yann', 'yann@example.com', '$2y$10$tmqIgd2/oP7esIwDmYZ.Q.w4IdrRR6Y6Gf18zTqjqUjf4ieYJR3SS', '2026-02-09 13:15:47'),
 (2, 'Alice', 'alice@example.com', 'dummyhash2', '2026-02-09 13:15:47'),
 (3, 'Bob', 'bob@example.com', 'dummyhash3', '2026-02-09 13:15:47'),
 (4, 'Toto', 'totolavedette@gmail.com', '$2y$10$6QuJABQ2B2OhVPZP6PgDtOOMQaGVtzcXD3WkmvzWI5dCO5f68BN4q', '2026-03-17 14:07:16'),
 (7, 'Totoooo', 'totolavedetteeee@gmail.com', '$2y$10$l4VnvFompaKBlkFY4okl8OZpSu7nWR7sVIgB1CzaNW/slgpU1a0b6', '2026-03-17 14:09:47'),
-(8, 'Totooooo', 'totolavedetteeeee@gmail.com', '$2y$10$CJ4X9GgBg7BM9lZcJ5AsGOdhOKvDnsFm3y56uiu/9RZ0daWnfdO4u', '2026-03-17 14:13:23'),
-(10, 'popo', 'poopo@mm.fr', '$2y$10$slIPFqi16OeGoWZJArxgBePWZH7dO0/EylB5HD3Fohp5lyMyxWAyW', '2026-03-25 14:35:27');
+(8, 'Totooooo', 'totolavedetteeeee@gmail.com', '$2y$10$CJ4X9GgBg7BM9lZcJ5AsGOdhOKvDnsFm3y56uiu/9RZ0daWnfdO4u', '2026-03-17 14:13:23');
 
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_admin`);
 
 --
 -- Index pour la table `images`
@@ -157,6 +190,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT pour la table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT pour la table `images`
 --
 ALTER TABLE `images`
@@ -166,13 +205,13 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT pour la table `scores`
 --
 ALTER TABLE `scores`
-  MODIFY `id_score` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_score` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Contraintes pour les tables déchargées

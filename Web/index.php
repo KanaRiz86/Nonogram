@@ -38,7 +38,26 @@ session_start();
     <tbody></tbody>
   </table>
 </div>
-<!------------------------------------------------------------------------------------------------->
+<!---------------------------------------- Popup Gif ------------------------------------------------>
+<!-- <div id="gif-score-container"></div> ancien display des gifs avec alert('Félicitations ...) -->
+
+<div id="demo-gifs-container">
+
+  <button data-score-demo="500">
+    Démo score faible
+  </button>
+
+  <button data-score-demo="1500">
+    Démo score moyen
+  </button>
+
+  <button data-score-demo="2500">
+    Démo score élevé
+  </button>
+
+</div>
+
+<!--------------------------------------------------------------------------------------------------->
   <div id="chronometre-container"></div>
 
   <div id="controls-container">
@@ -140,6 +159,19 @@ session_start();
       <li>Vous pouvez recommencer une partie avec les boutons "Nouvelle Partie" "5x5", "10x10", ou "15x15".</li>
     </ul>
     <button id="btnFermerRegles">Fermer</button>
+  </div>
+</div>
+
+  <!------------------------------------- Popup Score -------------------------------------------->
+<div class="popup" id="popupScore">
+  <div>Résultat de la partie</div>
+
+  <div class="popup-content">
+    <p id="message-score"></p>
+
+    <img id="gif-score" src="" alt="GIF de score">
+
+    <button id="btnFermerScore" type="button">Fermer</button>
   </div>
 </div>
 

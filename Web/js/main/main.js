@@ -6,8 +6,8 @@ import { Controleur } from "../controller/Controleur.js"; //Import du contrôleu
 import { Temps } from "../model/Temps.js";
 import { calculScore } from "../model/scores.js";
 import { chargerTopScores, envoyerScore } from "../controller/ControlScores.js";
-import { initAddEventListenerPopup } from "../controller/ControlPopup.js"
-
+import { initAddEventListenerPopup, afficherPopup, cacherPopup } from "../controller/ControlPopup.js";
+import { choisirGifSelonScore } from "../model/GestionGifScore.js";
 
 // ===================== Génération aléatoire de la solution // =====================
 
@@ -80,20 +80,27 @@ function demarrerJeu(lignes, colonnes) {
     const erreurs = 0;
     const id_user = 0;//mode invité
 
-  
-
-
     const id_image = 1;
     const tailleGrille = lignes; // Permet de savoir la taille de la grille
 
     const scoreFinal = Math.floor(calculScore(temps, tailleGrille, erreurs));
 
+    const cheminGifSelonScore = choisirGifSelonScore(scoreFinal);
+
     // Appelle de la fonction pour envoyer les données du score au serveur PHP via Fetch
     envoyerScore(id_user, id_image, temps, erreurs, tailleGrille);
     
+    // Pop-up Gif
     setTimeout(() => {
-      alert(`Félicitations ! Vous avez obtenu un score de : ${scoreFinal}`);
+      // Texte du score
+      document.getElementById("message-score").textContent =
+        `Félicitations ! Vous avez obtenu un score de : ${scoreFinal}`;
+      // GIF affiché
+      document.getElementById("gif-score").src = cheminGifSelonScore;
+      // Ouvre la popup
+      afficherPopup("popupScore");
     }, 50);
+
     // Exécute la fonction chargerTopScores après 500 ms
     // Permet d'éviter des conflits avec score-sauvegarder.php le fichier met du temps à répondre
     setTimeout(chargerTopScores, 500);
@@ -118,5 +125,24 @@ boutons.forEach(bouton => {
   });
 });
 
+document.getElementById("btnFermerScore").addEventListener("click", () => {
+  cacherPopup();
+});
 
+// Affichage des boutons de démo pour les gifs et scores de fin de partie
 
+const boutonsDemoGif = document.querySelectorAll("#demo-gifs-container button[data-score-demo]");
+
+boutonsDemoGif.forEach((bouton) => {
+  bouton.addEventListener("click", () => {
+    const scoreDemo = Number(bouton.dataset.scoreDemo);
+    const cheminGifSelonScore = choisirGifSelonScore(scoreDemo);
+
+    document.getElementById("message-score").textContent =
+      `Démo : score simulé de ${scoreDemo}`;
+
+    document.getElementById("gif-score").src = cheminGifSelonScore;
+
+    afficherPopup("popupScore");
+  });
+});
