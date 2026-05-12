@@ -27,6 +27,23 @@
   cursor: pointer;
 }
 
+/* ================== Pop-up - boutons de démo ================== */
+
+#demo-gifs-container {
+  display: flex; /* <-- Pour cacher les boutons de démo, sasir la valeur "display: none" */
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+#gif-score {  /* adaptation de taille pour le gif*/
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  display: block;
+  margin: 15px auto;
+}
+
 
 /* ============ Fond de la popup (connexion et aide) ============ */
 
