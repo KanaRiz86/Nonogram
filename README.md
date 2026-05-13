@@ -52,26 +52,23 @@ L’interface est entièrement réalisée côté client en :
 
 ---
 
-# Structure du projet
+## Structure du projet
 
+```text
 project/
-│
 ├── index.html
 ├── style.css
-│
-├── js/
-│   ├── main.js
-│   │
-│   ├── model/
-│   │   ├── GridModel.js
-│   │   ├── PuzzleModel.js
-│   │   └── CellState.js
-│   │
-│   ├── view/
-│   │   └── GameView.js
-│   │
-│   └── controller/
-│       └── GameController.js
+└── js/
+    ├── main.js
+    ├── model/
+    │   ├── GridModel.js
+    │   ├── PuzzleModel.js
+    │   └── CellState.js
+    ├── view/
+    │   └── GameView.js
+    └── controller/
+        └── GameController.js
+```
 
 # Architecture MVC
 
